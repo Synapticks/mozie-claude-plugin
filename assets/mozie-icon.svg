@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Mozie</title>
+  <rect width="512" height="512" fill="#3f1044"/>
+  <rect x="192" y="215" width="26" height="128" rx="13" fill="#ffffff"/>
+  <rect x="243" y="215" width="26" height="90" rx="13" fill="#ffffff"/>
+  <rect x="294" y="215" width="26" height="128" rx="13" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "mozie",
+  "displayName": "Mozie",
+  "version": "1.0.0",
+  "description": "Find creators, run campaigns",
+  "author": {
+    "name": "Synapticks Inc.",
+    "url": "https://mozie.app"
+  },
+  "homepage": "https://mozie.app",
+  "keywords": [
+    "creator-marketing",
+    "campaigns",
+    "influencer-marketing"
+  ],
+  "mcpServers": "./.mcp.json"
+}
