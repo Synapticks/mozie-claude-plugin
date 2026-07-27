@@ -19,9 +19,9 @@ Move campaign email safely while preserving exact thread context and delivery tr
 1. Run the readiness checks from the `mozie-prepare-creators` skill. Exclude opt-outs, duplicates, prior contact, invalid recipients, uncertain names, and open conflicting workflows.
 2. Re-read the creator, email, campaign, thread, template, and sending connection immediately before drafting.
 3. Render the exact recipient, subject, body, greeting, and sender. Do not add a campaign link unless the user or approved template explicitly requires it.
-4. Create approval-gated drafts with the supported campaign outreach method. Present recipient count, exclusions, representative personalized messages, and the exact approval scope.
+4. Create approval-gated drafts with the supported campaign outreach method. Read the returned `approvalRequests` record and present its exact recipient count, exclusions, representative personalized messages, and approval scope.
 5. Stop for explicit approval. Approval binds the exact recipients and message version; any material edit requires fresh approval.
-6. After approval, execute only the approved action. Poll workflow runs to a terminal state and re-read persisted thread messages.
+6. After approval, approve that exact request through `approvalRequests`; never synthesize approval. Poll workflow runs to a terminal state and re-read persisted thread messages.
 7. Report provider or external message IDs when available. `queued` is not `sent`, and `sent` is not `delivered`.
 
 ## Inbox and replies
