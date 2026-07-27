@@ -1,18 +1,22 @@
 # Mozie Claude Plugin
 
-Find, evaluate, and run personalized creator campaigns in your authorized Mozie
-workspace.
+Run creator campaigns through focused skills and the public Mozie MCP in your
+authorized workspace.
 
 ## What it includes
 
 - A remote MCP connection to `https://mcp.mozie.app`.
-- A workflow skill for creator discovery, campaign review, and approval-gated
-  outreach.
+- Five skills for campaign launch, creator preparation, approval-gated email,
+  deals and content, and campaign closeout.
 - Public Mozie branding and documentation links.
 
 This repository deliberately contains no Mozie server source code, credentials,
 OAuth material, customer data, reviewer accounts, or internal operational
 configuration.
+
+Public self-serve outreach is email-only. The plugin excludes managed
+operations, Instagram and WhatsApp automation, provider-event controls, admin
+tools, and finance writes.
 
 ## Install and connect
 
@@ -28,11 +32,16 @@ claude --plugin-dir .
 
 Then use `/reload-plugins` after editing plugin configuration.
 
+Claude can select a skill automatically from the request. To force a phase,
+invoke `/mozie:mozie-launch-campaign`, `/mozie:mozie-prepare-creators`,
+`/mozie:mozie-outreach-inbox`, `/mozie:mozie-deals-content`, or
+`/mozie:mozie-close-campaign`.
+
 ## Example requests
 
-- “Find creators for my campaign brief and explain the fit.”
-- “Show my campaign health and the highest-priority next actions.”
-- “Draft personalized outreach, then ask for approval before sending.”
+- “Launch a campaign from this brief and build a verified shortlist.”
+- “Prepare this roster and draft personalized email outreach.”
+- “Review campaign health and recommend the next actions.”
 
 ## Privacy and support
 
