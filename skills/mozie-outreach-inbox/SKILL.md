@@ -16,9 +16,9 @@ Move campaign email safely while preserving exact thread context and delivery tr
 
 ## First touch
 
-1. Run the readiness checks from the `mozie-prepare-creators` skill. Exclude opt-outs, duplicates, prior contact, invalid recipients, uncertain names, and open conflicting workflows.
+1. Run the readiness checks from the `mozie-prepare-creators` skill. Exclude opt-outs, duplicates, prior contact, invalid recipients, and open conflicting workflows. A missing human name is a warning, not an email blocker, when the campaign permits its neutral greeting fallback.
 2. Re-read the creator, email, campaign, thread, template, and sending connection immediately before drafting.
-3. Render the exact recipient, subject, body, greeting, and sender. Do not add a campaign link unless the user or approved template explicitly requires it.
+3. Render the exact recipient, subject, body, greeting, and sender. Use verified greeting name, workspace display name, verified profile name, then the campaign-approved neutral fallback such as `there`; never use a handle as a first name. Do not require a phone, Instagram identity, or WhatsApp state for email. Do not add a campaign link unless the user or approved template explicitly requires it.
 4. Create approval-gated drafts with the supported campaign outreach method. Read the returned `approvalRequests` record and present its exact recipient count, exclusions, representative personalized messages, and approval scope.
 5. Stop for explicit approval. Approval binds the exact recipients and message version; any material edit requires fresh approval.
 6. After approval, approve that exact request through `approvalRequests`; never synthesize approval. Poll workflow runs to a terminal state and re-read persisted thread messages.
