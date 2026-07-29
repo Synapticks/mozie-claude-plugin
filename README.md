@@ -20,9 +20,15 @@ tools, and finance writes.
 
 ## Install and connect
 
-After installing the plugin, open `/mcp` in Claude Code and complete the Mozie
-OAuth sign-in flow. The plugin connects only to the workspace your Mozie account
-is authorized to use.
+Add the public marketplace and install Mozie:
+
+```sh
+claude plugin marketplace add Synapticks/mozie-claude-plugin
+claude plugin install mozie@mozie
+```
+
+Then open `/mcp` in Claude Code and complete the Mozie OAuth sign-in flow. The
+plugin connects only to the workspace your Mozie account is authorized to use.
 
 In a local checkout, test the package with:
 

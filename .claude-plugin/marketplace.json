@@ -1,0 +1,16 @@
+{
+  "name": "mozie",
+  "description": "Creator campaign workflows for Claude Code.",
+  "owner": {
+    "name": "Synapticks Inc.",
+    "email": "support@mozie.app"
+  },
+  "plugins": [
+    {
+      "name": "mozie",
+      "source": ".",
+      "description": "Find, evaluate, and run personalized creator campaigns in your Mozie workspace.",
+      "version": "1.1.0"
+    }
+  ]
+}
