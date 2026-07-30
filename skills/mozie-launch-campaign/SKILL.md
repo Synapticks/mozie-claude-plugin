@@ -22,9 +22,14 @@ Build the smallest accurate campaign and shortlist that satisfies the user's bri
 3. Choose discovery deliberately:
    - Use `creators.briefSearch` for a fast, synchronous pool.
    - Use `discoverySearches.create` for multi-constraint or reasoned scoring.
+   - When the user requests a creator count, pass that count as `topK` and
+     treat it as a strict upper bound. The supported range is 1 to 50; never
+     silently expand a smaller request to 50.
 4. For an asynchronous search, poll its durable ID to a terminal state. If it reaches `awaiting_review`, inspect the questions and call `discoverySearches.proceed` once with consolidated clarifications and the same idempotency key.
 5. Read compact result summaries. Apply hard constraints first, then rank by fit. Explain material exclusions instead of silently relaxing the brief.
-6. Show a bounded review table with creator, platform, fit, evidence, important metrics, and risk. Do not treat directory metrics as canonical campaign metrics.
+6. Show no more than the requested number of creators in the review table,
+   with creator, platform, fit, evidence, important metrics, and risk. Do not
+   treat directory metrics as canonical campaign metrics.
 7. Persist only the selected results. Create or reuse a collection when the user wants an intermediate review set; add creators to the campaign only after selection is clear.
 8. Re-list the campaign roster and verify the resulting creator IDs and count.
 
