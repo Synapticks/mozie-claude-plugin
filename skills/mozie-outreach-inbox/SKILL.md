@@ -13,13 +13,22 @@ Move campaign email safely while preserving exact thread context and delivery tr
 - This skill is email-only. Never automate Instagram DMs, WhatsApp, managed operations, provider events, or finance writes.
 - Start with `mcpContext.current`. Never switch context implicitly.
 - Prefer one `execute` call for pagination, polling, and verification. Use stable per-recipient, per-message-version idempotency keys.
+- Do not call or reconstruct internal Ops preflight. Use tenant-scoped readiness
+  reads, then treat the public draft operation's structured exclusions and
+  blockers as authoritative. Public drafts and managed sends share the
+  canonical thread workflow; the public boundary removes admin and non-email
+  capabilities, not delivery safety.
 
 ## First touch
 
 1. Run the readiness checks from the `mozie-prepare-creators` skill. Exclude opt-outs, duplicates, prior contact, invalid recipients, and open conflicting workflows. A missing human name is a warning, not an email blocker, when the campaign permits its neutral greeting fallback.
 2. Re-read the creator, email, campaign, thread, template, and sending connection immediately before drafting.
 3. Render the exact recipient, subject, body, greeting, and sender. Use verified greeting name, workspace display name, verified profile name, then the campaign-approved neutral fallback such as `there`; never use a handle as a first name. Do not require a phone, Instagram identity, or WhatsApp state for email. Do not add a campaign link unless the user or approved template explicitly requires it.
-4. Create approval-gated drafts with the supported campaign outreach method. Read the returned `approvalRequests` record and present its exact recipient count, exclusions, representative personalized messages, and approval scope.
+4. Create approval-gated drafts with `campaigns.startOutreach` or
+   `campaigns.bulkEmail`, as appropriate. Read the returned
+   `approvalRequests` record and present its exact recipient count, exclusions,
+   representative personalized messages, and approval scope. A blocked or
+   excluded row is not a draft and must not be counted as contacted.
 5. Stop for explicit approval. Approval binds the exact recipients and message version; any material edit requires fresh approval.
 6. After approval, approve that exact request through `approvalRequests`; never synthesize approval. Poll workflow runs to a terminal state and re-read persisted thread messages.
 7. Report provider or external message IDs when available. `queued` is not `sent`, and `sent` is not `delivered`.
