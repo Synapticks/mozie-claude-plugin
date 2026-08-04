@@ -1,6 +1,6 @@
 ---
 name: mozie-prepare-creators
-description: Verify a Mozie campaign roster before outreach by resolving creator identity, duplicates, names, contact information, pricing, prior contact, and readiness. Use for roster cleanup, contact enrichment, personalization readiness, or pre-outreach review.
+description: Verify a Mozie campaign roster before outreach: creator identity, duplicates, names, contacts, and pricing. Use for roster cleanup, enrichment, or pre-outreach readiness checks.
 ---
 
 # Prepare Mozie creators
