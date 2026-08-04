@@ -1,6 +1,6 @@
 ---
 name: mozie-launch-campaign
-description: Create or reuse a Mozie campaign, turn a brief into discovery constraints, find and review creators, and build a verified shortlist. Use for new campaign setup, creator discovery, ICP-led searches, collections, or adding selected creators to a campaign.
+description: Turn a brief into creator discovery in Mozie and build a verified shortlist. Use for new campaign setup, creator discovery, ICP-led searches, or adding creators to a campaign.
 ---
 
 # Launch a Mozie campaign

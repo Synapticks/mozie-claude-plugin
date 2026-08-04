@@ -1,6 +1,6 @@
 ---
 name: mozie-deals-content
-description: Negotiate creator terms and manage Mozie proposals, contracts, deliverables, reviews, revisions, publishing readiness, and tracking. Use after a creator responds or when advancing active campaign work.
+description: Negotiate creator terms and manage Mozie proposals, contracts, deliverables, reviews, and publishing readiness. Use after a creator responds or when advancing active campaign work.
 ---
 
 # Manage deals and content

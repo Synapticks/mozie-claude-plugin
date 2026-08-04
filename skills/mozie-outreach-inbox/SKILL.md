@@ -1,6 +1,6 @@
 ---
 name: mozie-outreach-inbox
-description: Draft, review, approve, send, and verify personalized creator email in Mozie, then triage and reply to campaign inbox threads. Use for first-touch email, bulk email, follow-ups, inbox review, or creator replies. Public self-serve outreach is email-only.
+description: Draft, approve, send, and verify personalized creator email in Mozie, then triage campaign inbox replies. Email-only on self-serve. Use for first-touch, follow-ups, or inbox review.
 ---
 
 # Run email outreach and inbox

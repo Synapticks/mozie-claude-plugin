@@ -1,6 +1,6 @@
 ---
 name: mozie-close-campaign
-description: Reconcile Mozie campaign health, outcomes, deliverables, tracking, invoices, payment obligations, and remaining actions before closeout. Use for reporting, campaign audits, ROI summaries, or safe completion.
+description: Reconcile Mozie campaign outcomes, deliverables, tracking, invoices, and payment obligations before closeout. Use for reporting, campaign audits, ROI summaries, or safe completion.
 ---
 
 # Close a Mozie campaign
